@@ -1,6 +1,5 @@
 import {Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToMany, Entity} from "typeorm"
 import {v4 as uuid} from 'uuid'
-import { Exclude } from 'class-transformer'
 import { Accounts } from "./accounts.entity";
 import { Transactions } from "./transactions.entity";
 
@@ -20,7 +19,6 @@ export class User{
 
 
     @Column({nullable: false})
-    @Exclude()
     password: string;
 
 
