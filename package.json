@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "ts-node-dev --ignore-watch node_modules src/server.ts",
     "typeorm": "typeorm-ts-node-commonjs",
-    "build": "tsc"
+    "build": "rm -rf ./dist && tsc",
+    "start": "node ./dist/index.js",
+    "migration: generate":"yarn typeorm migration:generate ./src/migrations/initialMigration -d ./src/data-source.ts",
+    "migration: run": "yarn typeorm migration:run -d ./src/data-source.ts"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
