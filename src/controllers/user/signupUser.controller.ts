@@ -1,6 +1,5 @@
 import signUpUserService from "../../services/user/signupUser.service";
 import { Request,Response } from "express";
-import { instanceToInstance } from "class-transformer";
 import { AppError, handleError } from "../../error/appError";
 
 
@@ -11,7 +10,7 @@ const signUpUserController = async (req: Request, res: Response) => {
 
         const newUser = await signUpUserService({name, email, password})
 
-        return res.status(201).json(instanceToInstance(newUser))
+        return res.status(201).json(newUser)
         
     } catch (error) {
         if(error instanceof AppError){
