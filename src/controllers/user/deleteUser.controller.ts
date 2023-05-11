@@ -6,7 +6,7 @@ const deleteUserController = async (req: Request, res: Response) => {
     try {
         const {userEmail} = req
         await deleteUserService(userEmail)
-        return res.status(204).json("message: Account was deleted with successfully")
+        return res.status(204).json()
     } catch (error) {
         if(error instanceof AppError){
             handleError(error, res)

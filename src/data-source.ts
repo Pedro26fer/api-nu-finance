@@ -12,13 +12,13 @@ import {lastMigration1683175055979} from "./migrations/1683175055979-lastMigrati
 
 const AppDataSource = new DataSource({
   type: "postgres",
-  // host: "localhost",  
+  host: "localhost",  
 
-  url: process.env.URLDATABASEWEB,
+  // url: process.env.URLDATABASEWEB,
 
-  // username: process.env.POSTGREE_USER,
-  // password: process.env.POSTGREE_PASSWORD,
-  // database: process.env.POSTGREE_DATABASE,
+  username: process.env.POSTGREE_USER,
+  password: process.env.POSTGREE_PASSWORD,
+  database: process.env.POSTGREE_DATABASE,
 
   synchronize: false,
   logging: true,
