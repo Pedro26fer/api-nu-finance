@@ -10,6 +10,7 @@ const getUsersService = async (userEmail: string) => {
             name:true,
             email: true,
             createdAt: true,
+            updatedAt: true
         },
         
         where:{
