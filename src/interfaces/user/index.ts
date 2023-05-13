@@ -9,7 +9,8 @@ export interface IUserSignUp {
  }
 
  export interface IUserUpdated {
-    name?: string,
-    email?: string,
-    password?: string
+   id?: string
+   name?: string,
+   email?: string,
+   password?: string
  }

@@ -16,6 +16,10 @@ const updateUserService = async (id: string, data: IUserUpdated) => {
     throw new AppError(404, "User not found");
   }
 
+  if(data.id){
+    throw new AppError(401, "You dont have permission to do this action")
+  }
+
   try {
     if (data.password) {
       data.password = bcrypt.hashSync(data.password, 10);
