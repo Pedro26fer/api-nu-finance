@@ -7,3 +7,11 @@ export interface IAddTransactin {
     account: string;
     userEmail: string
 }
+
+export interface IUpdateTransactions {
+    id?: string,
+    description?: string,
+    type?: string,
+    value?: number,
+
+}
