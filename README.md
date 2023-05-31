@@ -86,6 +86,7 @@ Requisições para a API devem seguir os padrões:
               "updatedAt": "2023-05-31T21:21:12.424Z"
           }   
 
+_____________________________________________________________________________________________
 
 | Método | Endpoint |
 |:---:|:---:|
@@ -116,7 +117,39 @@ Requisições para a API devem seguir os padrões:
         
 _______________________________________________________________________________  
 
+| Método | Endpoint |
+|:---:|:---:|
+| `PATCH`| /edit/:idUser |
+
++ Request (application/json)
+
+
+  + Headers
+  
+         {       
+            "Authorization": "token  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBfZmVybmFuZGVzQGdtYWlsLmNvbSIsImlhdCI6MTY4NTU2ODc4OCwiZXhwIjoxNjg1NTg2Nzg4fQ.UZuvPPNktZ1IxSru8ASxxWxAvceBnetHzGI1LgxioxA"
+         }
+      
+
+  + Body
+
+        {
+          "name": "Pedro Fernandes"
+        }
 
 
 
+  + Url
 
+        {
+           "idUser": "e1ff2b7f-93b7-4b90-b505-ae661e599862"
+        }
+        
++ Response 204 (application/json)
+
+      {
+        No content
+      }
+      
+
+    
