@@ -57,4 +57,25 @@ Requisições para a API devem seguir os padrões:
 | `DELETE` | /deleteAccount/:idAccount | Deleta conta bancária cujo id foi enviado pela URL | token JWT | 204 |
 
 
+## Dados de Request e Response
+## User
+
+| Método | Endpoint |
+|:---:|:---:|
+| `GET`| /profile |
+
+  + Request (application/json)  
+  
+    + Headers
+
+
+          {       
+            "Authorization": "token   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBoQGdtYWlsLmNvbSIsImlhdCI6MTY4NTU0NDg4NywiZXhwIjoxNjg1NTYyODg3fQ.BT9Z_bE4ysYtSxGyiwDKM-hOM6X3JGW_eLNUfSFEBnc"
+          }
+
+
+
+
+
+
 
