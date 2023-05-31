@@ -20,6 +20,7 @@ Requisições para a API devem seguir os padrões:
 | Código | Descrição |
 |:---:|:---:|
 | `200` | Requisição executada com sucesso (success).|
+| `201` | Registro criado com sucesso (created).|
 | `204` | Requisição concluída sem objeto de resposta (No content).|
 | `400` | Erros de validação ou os campos informados não existem no sistema.|
 | `401` | Dados de acesso inválidos.|
@@ -34,7 +35,7 @@ Requisições para a API devem seguir os padrões:
 | Método | Endpoint | Descrição | Authentication | Código HTTP |
 |:---:|:---:|:---:|:---:|:---:|
 | `GET` | /profile | Retorna os de perfil do usuário logado.|  token JWT. | 200 |
-| `POST` | /signup | Cadastro de usuário. | -- | 200 |
+| `POST` | /signup | Cadastro de usuário. | -- | 201 |
 | `PATCH` | /edit/:idUser | Edição/Atualização de dados do usuário |  token JWT. |200 |
 | `DELETE` | /deleteUser | Deleção da conta do usuário | token JWT. | 204 |
 
@@ -43,9 +44,17 @@ Requisições para a API devem seguir os padrões:
 | Método | Endpoint | Descrição | Authentication | Código HTTP |
 |:---:|:---:|:---:|:---:|:---:|
 | `GET` | /allTransactions | Retorna todas as transações do usuário logado.|  token JWT. | 200 |
-| `POST` | /addTransaction/:idAccount | Adiciona uma transação na conta bancária cujo id foi enviado pela URL | token JWT | 200 |
-| `PATCH` | /edit/transaction/:idTransaction | Edita dados da transação
+| `POST` | /addTransaction/:idTransaction | Adiciona uma transação na conta bancária cujo id foi enviado pela URL | token JWT | 201 |
+| `PATCH` | /edit/transaction/:idTransaction | Edita dados da transação cujo id foi enviado pela URL | token JWT | 204 |
+| `DELETE` | /deleteTransactions/:idTransaction | Deleta transação cujo id foi enviado  pela URL | token JWT | 204 |
 
+## Rotas das Contas Bancárias (Accounts)
+| Método | Endpoint | Descrição | Authentication | Código HTTP |
+|:---:|:---:|:---:|:---:|:---:|
+| `GET` | /accounts | Retorna todas as contas bancárias cadastradas do usuário logado. | token JWT | 200 |
+| `POST` | /addAccount | Adiciona uma conta bancária pertencente ao usuário logado. | token JWT | 201 |
+| `PATCH` | /editAccount/:idAccount | Atualiza dados da conta bancária cujo id foi enviado pela URL. | token JWT | 200 |
+| `DELETE` | /deleteAccount/:idAccount | Deleta conta bancária cujo id foi enviado pela URL | token JWT | 204 |
 
 
 
