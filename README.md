@@ -44,7 +44,7 @@ Requisições para a API devem seguir os padrões:
 | Método | Endpoint | Descrição | Authentication | Código HTTP |
 |:---:|:---:|:---:|:---:|:---:|
 | `GET` | /allTransactions | Retorna todas as transações do usuário logado.|  token JWT. | 200 |
-| `POST` | /addTransaction/:idTransaction | Adiciona uma transação na conta bancária cujo id foi enviado pela URL | token JWT | 201 |
+| `POST` | /addTransaction/:idAccount | Adiciona uma transação na conta bancária cujo id foi enviado pela URL | token JWT | 201 |
 | `PATCH` | /edit/transaction/:idTransaction | Edita dados da transação cujo id foi enviado pela URL | token JWT | 204 |
 | `DELETE` | /deleteTransactions/:idTransaction | Deleta transação cujo id foi enviado  pela URL | token JWT | 204 |
 
@@ -70,10 +70,51 @@ Requisições para a API devem seguir os padrões:
 
 
           {       
-            "Authorization": "token   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBoQGdtYWlsLmNvbSIsImlhdCI6MTY4NTU0NDg4NywiZXhwIjoxNjg1NTYyODg3fQ.BT9Z_bE4ysYtSxGyiwDKM-hOM6X3JGW_eLNUfSFEBnc"
+            "Authorization": "token  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBfZmVybmFuZGVzQGdtYWlsLmNvbSIsImlhdCI6MTY4NTU2ODc4OCwiZXhwIjoxNjg1NTg2Nzg4fQ.UZuvPPNktZ1IxSru8ASxxWxAvceBnetHzGI1LgxioxA"
           }
 
 
+  + Response 200 (application/json)
+
+          
+          {
+              "name": "Pedro Henrique",
+              "email": "p_fernandes@gmail.com",
+              "password": "$2b$10$.AohwymdcR10IyCGVd4BouhjuYwDwIHgnfbxZUaDVQVgTpdSc0Zwe",
+              "id": "bd8b9f63-4697-4989-9b74-93ed3eade7f5",
+              "createdAt": "2023-05-31T21:21:12.424Z",
+              "updatedAt": "2023-05-31T21:21:12.424Z"
+          }   
+
+
+| Método | Endpoint |
+|:---:|:---:|
+| `POST`| /signup |
+
+
+  + Request (application/json)
+
+    + Body
+
+          {
+            "name": "Pedro Henrique",
+            "email": "p_fernandes@gmail.com",
+            "password": "12345"
+          }
+          
+          
+  + Response 201 (application/json)
+
+        {
+          "name": "Pedro Henrique",
+          "email": "p_fernandes@gmail.com",
+          "password": "$2b$10$.AohwymdcR10IyCGVd4BouhjuYwDwIHgnfbxZUaDVQVgTpdSc0Zwe",
+          "id": "bd8b9f63-4697-4989-9b74-93ed3eade7f5",
+          "createdAt": "2023-05-31T21:21:12.424Z",
+          "updatedAt": "2023-05-31T21:21:12.424Z"
+        }
+        
+_______________________________________________________________________________  
 
 
 
