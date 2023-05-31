@@ -6,7 +6,7 @@ const deleteAccountController = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     await deleteAccountService(id);
-    return res.json("message: the account was deleted");
+    return res.status(204).json("message: the account was deleted");
   } catch (error) {
     if (error instanceof AppError) {
       handleError(error, res);

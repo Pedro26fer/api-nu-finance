@@ -11,7 +11,7 @@ const signInUserService = async ({ email, password }: IUserSignIn) => {
   const emailRegistered = await userRepository.findOne({ where: { email } });
 
   if (!emailRegistered) {
-    throw new AppError(404, "email/password invalid");
+    throw new AppError(400, "email/password invalid");
   }
 
   const acceptPasswoord = bcrypt.compareSync(
@@ -20,7 +20,7 @@ const signInUserService = async ({ email, password }: IUserSignIn) => {
   );
 
   if (!acceptPasswoord) {
-    throw new AppError(404, "email/password invalid");
+    throw new AppError(400, "email/password invalid");
   }
 
   const token = jwt.sign({ email }, String(process.env.SECRET_KEY), {
