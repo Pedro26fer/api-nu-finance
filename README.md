@@ -192,16 +192,54 @@ ________________________________________________________________________________
 
    + Body
 
-          {
-            "email": "p_fernandes@gmail.com",
-            "password": "acdf"
-          }
+        {
+          "email": "p_fernandes@gmail.com",
+          "password": "acdf"
+        }
           
 + Response 200 (application/json)
 
       {
           "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBfZmVybmFuZGVzQGdtYWlsLmNvbSIsImlhdCI6MTY4NjIyOTA5NSwiZXhwIjoxNjg2MjQ3MDk1fQ.ddo1NKXlNXl7FaLVf0iv4O4Sz9J_EiwfZBFFsep_gjo"
       }
+      
 
-    
-    
+__________________________________________________________________________________________________________________________________________________
+
+
+## Accounts
+
+| Método | Endpoint |
+|:---:|:---:|
+| `POST`| /addAccount |
+
++ Request (application/json)
+
+   + Body
+
+         {
+            "name": "Banco Intermedium S.A.",
+            "number": "39689009-6"
+         }
+
++ Response (application/json)
+  
+            {
+               "id": "889d94ef-5890-4859-9610-adc4ab3410f8",
+               "name": "Banco Intermedium S.A.",
+               "number": "39689009-6",
+               "user": {
+                "id": "7b93ce64-a939-4f21-b4ec-227756a4e07a",
+                "name": "Pedro Henrique",
+                "email": "p_fernandes@gmail.com",
+                "accounts": [
+                 {
+                  "id": "889d94ef-5890-4859-9610-adc4ab3410f8",
+                  "name": "Banco Intermedium S.A.",
+                  "number": "39689009-6"
+                 }
+                ],
+                "transactions": []
+               },
+               "transactions": []
+             }
