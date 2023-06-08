@@ -31,6 +31,11 @@ Requisições para a API devem seguir os padrões:
 <https://api-nu-finance.cyclic.app>
 
 
+## Rota de login (session)
+| Método | Endpoint | Descrição | Authentication | Código HTTP |
+|:---:|:---:|:---:|:---:|:---:|
+| `POST`| /signin | Retrona um token JWT. | -- | 200 |
+ 
 ## Rotas do Usuário (User)
 | Método | Endpoint | Descrição | Authentication | Código HTTP |
 |:---:|:---:|:---:|:---:|:---:|
@@ -62,34 +67,6 @@ Requisições para a API devem seguir os padrões:
 
 | Método | Endpoint |
 |:---:|:---:|
-| `GET`| /profile |
-
-  + Request (application/json)  
-  
-    + Headers
-
-
-          {       
-            "Authorization": "token  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBfZmVybmFuZGVzQGdtYWlsLmNvbSIsImlhdCI6MTY4NTU2ODc4OCwiZXhwIjoxNjg1NTg2Nzg4fQ.UZuvPPNktZ1IxSru8ASxxWxAvceBnetHzGI1LgxioxA"
-          }
-
-
-  + Response 200 (application/json)
-
-          
-          {
-              "name": "Pedro Henrique",
-              "email": "p_fernandes@gmail.com",
-              "password": "$2b$10$.AohwymdcR10IyCGVd4BouhjuYwDwIHgnfbxZUaDVQVgTpdSc0Zwe",
-              "id": "bd8b9f63-4697-4989-9b74-93ed3eade7f5",
-              "createdAt": "2023-05-31T21:21:12.424Z",
-              "updatedAt": "2023-05-31T21:21:12.424Z"
-          }   
-
-_____________________________________________________________________________________________
-
-| Método | Endpoint |
-|:---:|:---:|
 | `POST`| /signup |
 
 
@@ -116,6 +93,36 @@ ________________________________________________________________________________
         }
         
 _______________________________________________________________________________  
+
+
+| Método | Endpoint |
+|:---:|:---:|
+| `GET`| /profile |
+
+  + Request (application/json)  
+  
+    + Headers
+
+
+          {       
+            "Authorization": "token  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBfZmVybmFuZGVzQGdtYWlsLmNvbSIsImlhdCI6MTY4NTU2ODc4OCwiZXhwIjoxNjg1NTg2Nzg4fQ.UZuvPPNktZ1IxSru8ASxxWxAvceBnetHzGI1LgxioxA"
+          }
+
+
+  + Response 200 (application/json)
+
+          
+          {
+              "name": "Pedro Henrique",
+              "email": "p_fernandes@gmail.com",
+              "password": "$2b$10$.AohwymdcR10IyCGVd4BouhjuYwDwIHgnfbxZUaDVQVgTpdSc0Zwe",
+              "id": "bd8b9f63-4697-4989-9b74-93ed3eade7f5",
+              "createdAt": "2023-05-31T21:21:12.424Z",
+              "updatedAt": "2023-05-31T21:21:12.424Z"
+          }   
+
+____________________________________________________________________________________________________________________________________________________
+
 
 | Método | Endpoint |
 |:---:|:---:|
@@ -150,7 +157,8 @@ _______________________________________________________________________________
       {
         No content
       }
-      
+
+_________________________________________________________________________________________________
 
 | Método | Endpoint |
 |:---:|:---:|
@@ -170,4 +178,30 @@ _______________________________________________________________________________
       {
         No content
       }
+      
+____________________________________________________________________________________________________________________________________________
+
+## Session
+
+
+| Método | Endpoint |
+|:---:|:---:|
+| `POST`| /signin |
+
++ Request (application/json)
+
+   + Body
+
+          {
+            "email": "p_fernandes@gmail.com",
+            "password": "acdf"
+          }
+          
++ Response 200 (application/json)
+
+      {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBfZmVybmFuZGVzQGdtYWlsLmNvbSIsImlhdCI6MTY4NjIyOTA5NSwiZXhwIjoxNjg2MjQ3MDk1fQ.ddo1NKXlNXl7FaLVf0iv4O4Sz9J_EiwfZBFFsep_gjo"
+      }
+
+    
     
