@@ -152,4 +152,22 @@ _______________________________________________________________________________
       }
       
 
+| Método | Endpoint |
+|:---:|:---:|
+| `DELETE`| /deleteUser |
+
+
++ Request  (application/json)
+
+  + Headers
+
+         {       
+            "Authorization": "token  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBfZmVybmFuZGVzQGdtYWlsLmNvbSIsImlhdCI6MTY4NTU2ODc4OCwiZXhwIjoxNjg1NTg2Nzg4fQ.UZuvPPNktZ1IxSru8ASxxWxAvceBnetHzGI1LgxioxA"
+         }     
+
++ Response 204 (application/json)
+
+      {
+        No content
+      }
     
