@@ -192,10 +192,10 @@ ________________________________________________________________________________
 
    + Body
 
-        {
-          "email": "p_fernandes@gmail.com",
-          "password": "acdf"
-        }
+         {
+           "email": "p_fernandes@gmail.com",
+           "password": "acdf"
+         }
           
 + Response 200 (application/json)
 
@@ -214,6 +214,12 @@ ________________________________________________________________________________
 | `POST`| /addAccount |
 
 + Request (application/json)
+
+   + Headers 
+
+             {       
+                "Authorization": "token  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBfZmVybmFuZGVzQGdtYWlsLmNvbSIsImlhdCI6MTY4NTU2ODc4OCwiZXhwIjoxNjg1NTg2Nzg4fQ.UZuvPPNktZ1IxSru8ASxxWxAvceBnetHzGI1LgxioxA"
+             }       
 
    + Body
 
@@ -243,3 +249,35 @@ ________________________________________________________________________________
                },
                "transactions": []
              }
+             
+_________________________________________________________________________________________________________________
+
+| Método | Endpoint |
+|:---:|:---:|
+| `GET`| /accounts |
+
++ Request
+
+   + Headers
+
+             {       
+                "Authorization": "token  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBfZmVybmFuZGVzQGdtYWlsLmNvbSIsImlhdCI6MTY4NTU2ODc4OCwiZXhwIjoxNjg1NTg2Nzg4fQ.UZuvPPNktZ1IxSru8ASxxWxAvceBnetHzGI1LgxioxA"
+             }  
+             
+             
++ Response 
+
+       [
+          {
+            "id": "889d94ef-5890-4859-9610-adc4ab3410f8",
+            "name": "Banco Intermedium S.A.",
+            "number": "39689009-6",
+            "transactions": []
+          }
+       ]
+       
+ _______________________________________________________________________________________________________________________
+ 
+ 
+ 
+
