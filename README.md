@@ -39,7 +39,7 @@ Requisições para a API devem seguir os padrões:
 ## Rotas do Usuário (User)
 | Método | Endpoint | Descrição | Authentication | Código HTTP |
 |:---:|:---:|:---:|:---:|:---:|
-| `GET` | /profile | Retorna os de perfil do usuário logado.|  token JWT. | 200 |
+| `GET` | /profile | Retorna o perfil do usuário logado.|  token JWT. | 200 |
 | `POST` | /signup | Cadastro de usuário. | -- | 201 |
 | `PATCH` | /edit/:idUser | Edição/Atualização de dados do usuário |  token JWT. |200 |
 | `DELETE` | /deleteUser | Deleção da conta do usuário | token JWT. | 204 |
